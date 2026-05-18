@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte | Futuro Sustentável</title>
+    
+    <style>
+        /* CSS - Estilização e Design Minimalista */
+        :root {
+            --verde-agro: #2d5a27;
+            --verde-claro: #f0f7ef;
+            --acento: #8bc34a;
+            --texto: #333;
+            --branco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--texto);
+            background-color: var(--branco);
+        }
+
+        /* Cabeçalho e Navegação */
+        .header {
+            background-color: var(--verde-agro);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 { font-size: 3rem; margin-bottom: 10px; }
+
+        /* Seções de Conteúdo */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--verde-agro);
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--acento);
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--verde-claro);
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        /* Rodapé */
+        .footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Botão Interativo */
+        .btn-acao {
+            background-color: var(--acento);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-acao:hover { background-color: var(--verde-agro); }
+
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <h1>AgroForte</h1>
+        <nav class="nav-links">
+            <a href="#producao">Produção</a>
+            <a href="#sustentabilidade">Sustentabilidade</a>
+            <a href="#soluções">Inovações</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Banner (Página Inicial) -->
+    <section class="hero">
+        <h2>Agro Forte, Futuro Sustentável</h2>
+        <p>O equilíbrio perfeito entre a produção de alimentos e a preservação do planeta.</p>
+        <button class="btn-acao" onclick="mostrarMensagem()">Saiba Mais</button>
+    </section>
+
+    <!-- Seção 1 - Produção -->
+    <div class="container" id="producao">
+        <h2 class="section-title">Produção & Economia</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>PIB Agro</h3>
+                <p>O setor é responsável por uma fatia crucial da economia brasileira, garantindo segurança alimentar e exportações.</p>
+            </div>
+            <div class="card">
+                <h3>Tecnologia de Ponta</h3>
+                <p>Drones e Agricultura de Precisão permitem produzir mais em menos espaço, otimizando cada semente.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção 2 - Sustentabilidade -->
+    <div class="container" style="background-color: var(--verde-claro); width: 100%;" id="sustentabilidade">
+        <div style="width: 80%; margin: auto; padding: 40px 0;">
+            <h2 class="section-title">Práticas Sustentáveis</h2>
+            <div class="grid">
+                <div class="card" style="background: white;">
+                    <h3>Energia Limpa</h3>
+                    <p>Uso de painéis solares e biogás proveniente de resíduos animais para alimentar as fazendas.</p>
+                </div>
+                <div class="card" style="background: white;">
+                    <h3>Irrigação Inteligente</h3>
+                    <p>Sensores de umidade no solo que evitam o desperdício de água, aplicando apenas o necessário.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção 5 - Contato -->
+    <div class="container" id="contato">
+        <h2 class="section-title">Conscientização</h2>
+        <p style="text-align: center;">Junte-se à revolução verde no campo. Deixe seu e-mail para receber boletins informativos.</p>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <input type="email" id="emailUser" placeholder="Seu melhor e-mail" style="padding: 10px; width: 300px; border-radius: 5px; border: 1px solid #ccc;">
+            <button class="btn-acao" onclick="assinarNewsletter()">Assinar</button>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>© 2026 - Agro Forte - Desenvolvido para Educação Ambiental</p>
+    </footer>
+
+    <!-- JavaScript - Interatividade -->
+    <script>
+        function mostrarMensagem() {
+            alert("O futuro do agronegócio depende da tecnologia aliada à natureza. Explore nossas seções para saber como!");
+        }
+
+        function assinarNewsletter() {
+            const email = document.getElementById('emailUser').value;
+            if(email) {
+                alert("Obrigado! O e-mail " + email + " foi cadastrado com sucesso.");
+                document.getElementById('emailUser').value = "";
+            } else {
+                alert("Por favor, insira um e-mail válido.");
+            }
+        }
+    </script>
+</body>
+</html>
